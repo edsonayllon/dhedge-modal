@@ -6,14 +6,13 @@ import { GlobalState, initialState } from 'globalState'
 
 const poolName = "Convex Strategies"
 
-
 const App = props => {
   const [state, setState] = useState(props.initialState)
 
   return (
     <GlobalState.Provider value={[state, setState]}>
       <div className="App">
-        <Modal poolName = {poolName}/>
+        { state.modal.active && (<Modal/>)}
         <Fund poolName = {poolName}/> 
       </div>
     </GlobalState.Provider>

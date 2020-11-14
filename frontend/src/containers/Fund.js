@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { Button } from 'antd'
 import { GlobalState } from 'globalState'; 
 
-
 export const Fund = props => {
     const { poolName } = props
     const [state, setState] = useContext(GlobalState)
