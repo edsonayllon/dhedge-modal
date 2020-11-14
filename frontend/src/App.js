@@ -6,8 +6,9 @@ import { GlobalState, initialState } from 'globalState'
 
 const poolName = "Convex Strategies"
 
-const App = () => {
-  const [state, setState] = useState(initialState)
+
+const App = props => {
+  const [state, setState] = useState(props.initialState)
 
   return (
     <GlobalState.Provider value={[state, setState]}>

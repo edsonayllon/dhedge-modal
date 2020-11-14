@@ -1,4 +1,5 @@
 @import '~antd/dist/antd.css';
+@import '~antd/dist/antd.dark.css';
 
 .App {
   height: 100%;
@@ -7,8 +8,22 @@
   padding: 0;
   background-color: #17191a;
   color: #a6a9af;
+  line-height: 1.618;
 }
 
+/* font */
+
+h1, h2 {
+  color: white;
+}
+
+h3 {
+  color: #a6a9af;
+}
+
+.caps {
+  text-transform:  uppercase;
+}
 
 /* Boilerplate */
 
@@ -28,6 +43,18 @@
   flex-direction: column;
 }
 
+.flex-one {
+  flex: 1;
+}
+
+.flex-two {
+  flex: 1.618;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
 /* Homepage */
 
 .fund-container {
@@ -44,8 +71,7 @@
   align-items: center;
 }
 
-h1 {
-  color: white;
+.fund-container h1 {
   font-size: 48px;
 }
 
@@ -95,8 +121,27 @@ h1 {
   margin: 64px 16.2vw;
 }
 
+.modal-content h2 {
+  font-size: 28px;
+}
+
+.modal-content h3 {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.modal-content hr {
+  width: 100%;
+  border-color: rgba(255, 255, 255, 0.0193);
+  border-width: 1px;
+}
+
 .lighten {
-  background: rgba(255, 255, 255, 0.1545);
+  background: rgba(255, 255, 255, 0.0193);
+}
+
+.padd16 {
+  padding: 16px;
 }
 
 @keyframes appear {

@@ -34,8 +34,8 @@ export const Fund = props => {
                 </div>
                 
                 { state.account.address 
-                    ? <Button onClick={handleOpenModal}>Invest</Button>
-                    : <Button disabled>Invest</Button>
+                    ? <Button onClick={handleOpenModal} size="large" type="primary" >Invest</Button>
+                    : <Button disabled size="large" >Invest</Button>
                 }
                 
             </div>
