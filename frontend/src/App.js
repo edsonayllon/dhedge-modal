@@ -1,15 +1,19 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import './App.css';
-import { Modal, Content } from 'components';
-import { GlobalState, initialState } from 'globalState';
+import { Fund } from 'containers/Fund'
+import { Modal } from 'components'
+import { GlobalState, initialState } from 'globalState'
+
+const poolName = "Convex Strategies"
 
 const App = () => {
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState(initialState)
+
   return (
     <GlobalState.Provider value={[state, setState]}>
       <div className="App">
-        <Modal />
-        <Home />
+        <Modal poolName = {poolName}/>
+        <Fund poolName = {poolName}/> 
       </div>
     </GlobalState.Provider>
   );
