@@ -76,7 +76,10 @@ export const Modal = () => {
                                 onChange={onInput} size="large" color="blue-1" 
                                 value={investment}/>
                         </div>
-                        <Slider marks={marks} defaultValue={0} onChange={value => calcInvestmentFromPercent(value)} value ={100 * investment / balanceDecimals()}/>
+                        <div className="mb-48">
+                            <Slider marks={marks} defaultValue={0} className = "m-16"
+                                onChange={value => calcInvestmentFromPercent(value)} value ={100 * investment / balanceDecimals()}/>
+                        </div>
                         
                     </div>
                     <div className="row width-100 flex-end flex" >
