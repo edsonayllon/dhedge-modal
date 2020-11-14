@@ -13,13 +13,10 @@
 
 /* font */
 
-h1, h2 {
+h1, h2, h3 {
   color: white;
 }
 
-h3 {
-  color: #a6a9af;
-}
 
 .caps {
   text-transform:  uppercase;
@@ -63,8 +60,26 @@ h3 {
   width: 100%;
 }
 
-.mgl-16 {
+.ml-16 {
   margin-left: 16px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.padd-16 {
+  padding: 16px;
+}
+
+.padd-32 {
+  padding: 32px;
+}
+
+
+
+.text-align-right {
+  text-align: right;
 }
 
 /* Homepage */
@@ -152,8 +167,17 @@ h3 {
   background: rgba(255, 255, 255, 0.0193);
 }
 
-.padd16 {
-  padding: 16px;
+.symbol-padding {
+  padding-left: 80px;
+}
+
+.input-symbol {
+  position: absolute;
+  border-right:#434343 solid 1px;
+  padding: 8px;
+  margin-top: 2px;
+  margin-left: 4px;
+  font-size: 12px;
 }
 
 @keyframes appear {
