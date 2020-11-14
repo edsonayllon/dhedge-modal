@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { 
     Button,
     InputNumber
@@ -7,15 +7,35 @@ import { GlobalState } from 'globalState';
 
 export const Modal = () => {
     const [state, setState] = useContext(GlobalState);
-    const { modal, web3 } = state;
+    const { modal, web3, contracts, account } = state;
     const [investment, setInvestment] = useState(0);
-    const [balance, setBalance] = useState(new web3.utils.BN('0'));
-    const [decimals, setDecimals] = useState(new web3.utils.BN('0'));
+    const [balance, setBalance] = useState(0);
+    const [decimals, setDecimals] = useState(0);
+
+    const calcPercentInvestment = (percent) => {
+        if (percent > 1) percent = 1;
+    }
     
+    useEffect(() => {
+        if (!active) return;
+        contracts.erc20.methods.balanceOf(account.address).call().then(gotBalance => {
+            setBalance(gotBalance);
+        })
+        contracts.erc20.methods.decimals().call().then(gotDecimals => {
+            setDecimals(gotDecimals);
+        })
+    }, [])
     
     const { active, poolName } = modal;
-    const onInput = value => setInvestment(value);
+    const onInput = value => {
+        if (value > balanceDecimals()) {
+            setInvestment(balanceDecimals());
+        } else {
+            setInvestment(value);
+        }
+    }
     const handleCloseModal = () => setState({...state, modal: { active: false } });
+    const balanceDecimals = () => balance / (10 ** decimals);
     return (
         <div>
             { active && (
@@ -29,7 +49,7 @@ export const Modal = () => {
                         </div>
                         <div className="flex column lighten flex-two padd16 space-between">
                             <div className="column">
-                                <p>balance: {balance.toString()}</p>
+                                <p>balance: {balanceDecimals()}</p>
                                 <InputNumber min={0} defaultValue={3} onChange={onInput} size="large" color="blue-1" value={investment}/>
                             </div>
                             <div className="row space-between" >

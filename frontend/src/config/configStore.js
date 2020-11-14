@@ -15,7 +15,7 @@ const configureStore = async () => {
             erc20
         },
         account: {
-            address: null,
+            address: '',
             balanceSUSD: 0,
             decimalsSUSD: 0
         }
