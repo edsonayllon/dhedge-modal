@@ -21,12 +21,18 @@ export const Modal = () => {
   const setMaxBalance = () => setInvestment(balanceDecimals())
 
   const onInput = value => {
-    if (value > balanceDecimals()) {
-      setMaxBalance()
-    } else {
-      setInvestment(value)
+    if (validNum(value)) {
+      if (value > balanceDecimals()) {
+        setMaxBalance()
+      } else {
+        setInvestment(value)
+      }
+    } else if (!value) {
+      setInvestment(0)
     }
   }
+
+  const validNum = value => /^\d+$/.test(value)
 
   const calcInvestmentFromPercent = (percent) => {
     if (percent > 100) percent = 100
