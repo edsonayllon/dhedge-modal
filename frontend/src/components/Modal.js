@@ -19,6 +19,7 @@ export const Modal = () => {
   const handleCloseModal = () => setState({ ...state, modal: { active: false } })
   const balanceDecimals = () => balance / (10 ** decimals)
   const setMaxBalance = () => setInvestment(balanceDecimals())
+  const validNum = value => /^\d+$/.test(value)
 
   const onInput = value => {
     if (validNum(value)) {
@@ -31,8 +32,6 @@ export const Modal = () => {
       setInvestment(0)
     }
   }
-
-  const validNum = value => /^\d+$/.test(value)
 
   const calcInvestmentFromPercent = (percent) => {
     if (percent > 100) percent = 100
