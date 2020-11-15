@@ -50,7 +50,7 @@ export const Modal = () => {
         <div className="modal-container">
             <div className="modal-content flex row">
                 <div className="flex column flex-one padd-32">
-                    <h2>Invest in {poolName}</h2>
+                    <h2 className="mb-32">Invest in {poolName}</h2>
                     <hr className="mb-32"/>
                     <h3 className="caps mb-32">Summary</h3>
                     <div className="flex row space-between mb-8">
@@ -61,14 +61,14 @@ export const Modal = () => {
                         <span className="summary-label">Gas fee</span>
                         <span className="summary-value">{gasFee.toFixed(2)}</span>
                     </div>
-                    <div className="flex row space-between mb-8 white">
+                    <div className="flex row space-between mb-32 white">
                         <span className="summary-label">total</span>
                         <span className="summary-value">{(gasFee + investment).toFixed(2)}</span>
                     </div>
                 </div>
                 <div className="flex column lighten flex-two padd-32 space-between">
                     <div className="flex column">
-                        <div className="row flex space-between mb-16">
+                        <div className="row flex space-between mb-16 mt-32">
                             <span className="caps">Invest with</span>
                             <a onClick={setMaxBalance}>Balance: {balanceDecimals().toFixed(3)}</a>
                         </div>
@@ -82,7 +82,7 @@ export const Modal = () => {
                                 value={investment}/>
                         </div>
                         <div className="mb-48">
-                            <Slider marks={marks} defaultValue={0} className = "m-16"
+                            <Slider marks={marks} defaultValue={0} className = "m-16 font-12"
                                 onChange={value => calcInvestmentFromPercent(value)} value ={100 * investment / balanceDecimals()}/>
                         </div>
 
