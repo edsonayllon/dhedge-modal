@@ -21,7 +21,7 @@ const App = props => {
 }
 
 App.propTypes = {
-  initialState: PropTypes.string
+  initialState: PropTypes.object
 }
 
 export default App
