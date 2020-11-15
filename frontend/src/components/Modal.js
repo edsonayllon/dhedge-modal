@@ -69,7 +69,7 @@ export const Modal = () => {
                 <div className="flex column lighten flex-two padd-32 space-between">
                     <div className="flex column">
                         <div className="row flex space-between mb-16 mt-32">
-                            <span className="caps">Invest with</span>
+                            <span className="caps white">Invest with</span>
                             <a onClick={setMaxBalance}>Balance: {balanceDecimals().toFixed(3)}</a>
                         </div>
                         <div className = "flex row">
