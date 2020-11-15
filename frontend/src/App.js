@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import './App.css'
 import { Fund } from 'containers/Fund'
 import { Modal } from 'components'
-import { GlobalState, initialState } from 'globalState'
+import { GlobalState } from 'globalState'
 
 const poolName = 'Convex Strategies'
 
@@ -17,6 +18,10 @@ const App = props => {
       </div>
     </GlobalState.Provider>
   )
+}
+
+App.propTypes = {
+  initialState: PropTypes.string
 }
 
 export default App

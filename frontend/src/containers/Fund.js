@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import { Button } from 'antd'
 import { GlobalState } from 'globalState'
+import PropTypes from 'prop-types'
 
-export const Fund = props => {
+const Fund = props => {
   const { poolName } = props
   const [state, setState] = useContext(GlobalState)
   const handleOpenModal = () => setState({ ...state, modal: { active: true, poolName } })
@@ -41,3 +42,9 @@ export const Fund = props => {
         </div>
   )
 }
+
+Fund.propTypes = {
+  poolName: PropTypes.string
+}
+
+export { Fund }
