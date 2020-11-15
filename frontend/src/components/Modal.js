@@ -14,7 +14,7 @@ export const Modal = () => {
   const [investment, setInvestment] = useState(0)
   const [balance, setBalance] = useState(0)
   const [decimals, setDecimals] = useState(0)
-  const gasFee = 92
+  const gasFee = 0.92
 
   const handleCloseModal = () => setState({ ...state, modal: { active: false } })
   const balanceDecimals = () => balance / (10 ** decimals)
