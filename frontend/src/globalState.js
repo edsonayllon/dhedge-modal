@@ -1,5 +1,5 @@
-import { createContext } from 'react';
+import { createContext } from 'react'
 
-const GlobalState = createContext([{}, () => {}]);
+const GlobalState = createContext([{}, () => {}])
 
 export { GlobalState }
